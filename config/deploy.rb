@@ -34,3 +34,15 @@ set :puma_access_log, "#{release_path}/log/puma.access.log"
 set :puma_error_log,  "#{release_path}/log/puma.error.log"
 set :puma_systemctl_user, :system
 set :puma_enable_socket_service, true
+# After bundler:install, run yarn install
+before 'deploy:assets:precompile', 'deploy:yarn_install'
+
+namespace :deploy do
+  task :yarn_install do
+    on roles(:web) do
+      within release_path do
+        execute :yarn, 'install', '--frozen-lockfile'
+      end
+    end
+  end
+end
