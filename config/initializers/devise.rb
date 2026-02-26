@@ -1,7 +1,6 @@
 Devise.setup do |config|
   config.mailer_sender = 'noreply@example.com'
   config.secret_key = Rails.application.credentials.secret_key_base
-  config.orm = :active_record
   config.case_insensitive_keys = [:email]
   config.strip_whitespace_keys = [:email]
   config.skip_session_storage = [:http_auth]
