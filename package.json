@@ -1,5 +1,8 @@
 {
   "name": "spree_assignment",
   "private": true,
+  "scripts": {
+    "build": "echo 'No JS build needed'"
+  },
   "dependencies": {}
 }
