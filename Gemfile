@@ -17,7 +17,7 @@ gem 'image_processing', '~> 1.2'
 gem 'kaminari', '~> 1.2'
 
 # SQLite for local only
-gem 'sqlite3', '~> 1.4', group: [:development, :test]
+gem 'sqlite3', '~> 2.9', group: [:development, :test]
 
 # MySQL for production
 gem 'mysql2', '~> 0.5', group: :production
