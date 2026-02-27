@@ -48,7 +48,13 @@ namespace :deploy do
 end
 
 # Skip yarn install - using importmap, not webpack
-
+namespace :deploy do
+  after :finishing, :fix_log_permissions do
+    on roles(:app) do
+      execute :sudo, "chown deploy:deploy -R /var/www/spree"
+    end
+  end
+end
 
 # Disable asset precompile
 after 'bundler:install', 'deploy:assets:precompile' do
