@@ -28,7 +28,7 @@ gem 'spree_backend', '~> 4.7.0'
 gem 'spree_emails', '~> 4.7.0'
 gem 'spree_sample', '~> 4.7.0'
 gem 'spree_auth_devise', '~> 4.6'
-
+gem 'spree_frontend', '~> 4.7.0'
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 end
