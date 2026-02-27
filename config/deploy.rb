@@ -46,3 +46,6 @@ namespace :deploy do
     end
   end
 end
+
+# Skip yarn install - using importmap, not webpack
+Rake::Task["deploy:yarn_install"].clear if Rake::Task.task_defined?("deploy:yarn_install")

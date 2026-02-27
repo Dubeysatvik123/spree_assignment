@@ -1,10 +1,5 @@
 {
-  "name": "spree",
+  "name": "spree_assignment",
   "private": true,
-  "scripts": {
-    "build": "esbuild app/javascript/application.js --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets"
-  },
-  "devDependencies": {
-    "esbuild": "..."
-  }
+  "dependencies": {}
 }
