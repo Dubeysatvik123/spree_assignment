@@ -24,7 +24,7 @@ gem 'mysql2', '~> 0.5', group: :production
 
 # Spree - pinned to stable 4.7.x which works with Rails 7.1
 gem 'spree', '~> 4.7.0'
-gem 'spree_backend', '4.7.1'
+gem 'spree_backend', '~> 4.7.0'
 gem 'spree_emails', '~> 4.7.0'
 gem 'spree_sample', '~> 4.7.0'
 gem 'spree_auth_devise', '~> 4.6'
@@ -41,4 +41,3 @@ group :development do
   gem 'capistrano-bundler', '~> 2.1', require: false
   gem 'capistrano3-puma', require: false
 end
-gem 'sprockets', '~> 3.7'
