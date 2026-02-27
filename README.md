@@ -43,3 +43,7 @@ On every push to `master`, GitHub Actions automatically:
 
 ### GitHub Actions – Successful Deploy
 ![CI/CD](screenshots/github_actions.png)
+
+
+### MYSQL Database tables - All tables successfully migrated
+![Mysql Database](screenshots/database.png)
