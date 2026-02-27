@@ -111,6 +111,8 @@ GEM
       popper_js (>= 1.16.1, < 2)
     builder (3.3.0)
     cancancan (3.6.1)
+    canonical-rails (0.2.17)
+      actionview (>= 4.1, < 8.1)
     capistrano (3.20.0)
       airbrussh (>= 1.0.0)
       i18n
@@ -437,6 +439,21 @@ GEM
     spree_extension (0.1.0)
       activerecord (>= 4.2)
       spree_core
+    spree_frontend (4.7.0)
+      babel-transpiler (~> 0.7)
+      bootstrap (~> 4.0)
+      canonical-rails (~> 0.2, >= 0.2.10)
+      flag-icons-rails (~> 3.4)
+      glyphicons (~> 1.0)
+      inline_svg (~> 1.5)
+      jquery-rails (~> 4.3)
+      jsbundling-rails
+      responders
+      sass-rails (>= 5)
+      spree_api (>= 4.7.0)
+      spree_core (>= 4.7.0)
+      sprockets (~> 4.0)
+      turbo-rails
     spree_sample (4.7.3)
       ffaker (~> 2.9)
       spree_core (>= 4.7.3)
@@ -528,6 +545,7 @@ DEPENDENCIES
   spree_auth_devise (~> 4.6)
   spree_backend (~> 4.7.0)
   spree_emails (~> 4.7.0)
+  spree_frontend (~> 4.7.0)
   spree_sample (~> 4.7.0)
   sqlite3 (~> 1.4)
   stimulus-rails
@@ -565,6 +583,7 @@ CHECKSUMS
   bootstrap (4.6.2.1) sha256=b7169e8ca5880a7251442aea2fd59b433fb28370449db02f8fd9cd10e39ceee0
   builder (3.3.0) sha256=497918d2f9dca528fdca4b88d84e4ef4387256d984b8154e9d5d3fe5a9c8835f
   cancancan (3.6.1) sha256=975c1d5cbf58d5df48a9452a7f61ae3d254608cd87570402f5925a8864c56b62
+  canonical-rails (0.2.17) sha256=771a2bc71bb4742fe175a639b545ec597d166f46a498611387ab7d81eae43ceb
   capistrano (3.20.0) sha256=0113e58dda99add0342e56a244f664734c59f442c5ed734f5303b0b559b479c9
   capistrano-bundler (2.2.0) sha256=47b4cf2ea17ea132bb0a5cabc5663443f5190a54f4da5b322d04e1558ff1468c
   capistrano-rails (1.7.0) sha256=aca57455e8c5435785e0f938e16aa5b79c263694a755e1dca1c5d1743b40aae7
@@ -683,6 +702,7 @@ CHECKSUMS
   spree_core (4.7.3) sha256=03bd357a8b390e8ca46634b25975ceb1c2a3bf75157365dc9c454e61775c6f7f
   spree_emails (4.7.3) sha256=2a0e6425dbdf80f42c748f33202f50d498cafe619a246126e40d0dbec4e836ab
   spree_extension (0.1.0) sha256=b648327f4787295e051be4ea0c0a47baec47c2e245bca9c93ecf73605fc3a051
+  spree_frontend (4.7.0) sha256=9821679a02a9db17f2b590da3750dd8e06b4d775a8bd84abd3a0f9a3e8cf5676
   spree_sample (4.7.3) sha256=899e16c3e6202f186ccc1f58f777332ddacdb40deaf3df3eb1cad83e34cf8e7b
   sprockets (4.2.2) sha256=761e5a49f1c288704763f73139763564c845a8f856d52fba013458f8af1b59b1
   sprockets-rails (3.5.2) sha256=a9e88e6ce9f8c912d349aa5401509165ec42326baf9e942a85de4b76dbc4119e
