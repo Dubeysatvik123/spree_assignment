@@ -174,10 +174,6 @@ GEM
       activesupport (>= 6.1)
     glyphicons (1.0.2)
     highline (2.1.0)
-    hotwire-rails (0.1.3)
-      rails (>= 6.0.0)
-      stimulus-rails
-      turbo-rails
     i18n (1.14.8)
       concurrent-ruby (~> 1.0)
     image_processing (1.14.0)
@@ -203,7 +199,7 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (6.0.1)
+    jquery-ui-rails (7.0.0)
       railties (>= 3.2.16)
     jsbundling-rails (1.3.1)
       railties (>= 6.0.0)
@@ -348,6 +344,8 @@ GEM
       io-console (~> 0.5)
     request_store (1.7.0)
       rack (>= 1.4)
+    requestjs-rails (0.0.14)
+      railties (>= 7.1.0)
     responders (3.2.0)
       actionpack (>= 7.0)
       railties (>= 7.0)
@@ -380,23 +378,25 @@ GEM
       devise-encryptable (= 0.2.0)
       spree_core (>= 4.5.0)
       spree_extension
-    spree_backend (4.7.2)
+    spree_backend (4.8.4)
       babel-transpiler (~> 0.7)
       bootstrap (~> 4.0)
       flag-icons-rails (~> 3.4)
       flatpickr (~> 4.6)
       glyphicons (~> 1.0)
-      hotwire-rails
+      importmap-rails
       inline_svg (~> 1.5)
       jquery-rails (~> 4.3)
-      jquery-ui-rails (~> 6.0)
-      jsbundling-rails
+      jquery-ui-rails (>= 6, < 8)
+      requestjs-rails
       responders
       sass-rails (>= 5)
       select2-rails (~> 4.0.6)
       spree (>= 4.7.0)
       sprockets (~> 4.0)
+      stimulus-rails
       tinymce-rails (~> 5.0)
+      turbo-rails
     spree_cli (4.7.3)
       thor (~> 1.0)
     spree_core (4.7.3)
@@ -543,7 +543,7 @@ DEPENDENCIES
   rails (= 7.1.3)
   spree (~> 4.7.0)
   spree_auth_devise (~> 4.6)
-  spree_backend (~> 4.7.0)
+  spree_backend (~> 4.8.4)
   spree_emails (~> 4.7.0)
   spree_frontend (~> 4.7.0)
   spree_sample (~> 4.7.0)
@@ -618,7 +618,6 @@ CHECKSUMS
   globalid (1.3.0) sha256=05c639ad6eb4594522a0b07983022f04aa7254626ab69445a0e493aa3786ff11
   glyphicons (1.0.2) sha256=037fb1223c31c0856a5e709b64024c6eed84fa8632c0cab8ac4f7b584ea24a5f
   highline (2.1.0) sha256=d63d7f472f8ffaa143725161ae6fb06895b5cb7527e0b4dac5ad1e4902c80cb9
-  hotwire-rails (0.1.3) sha256=a4ed7b6bab50f91ce5a3bfaf1c721e6cef8a9ec8f6974c290e2862a280d08d8d
   i18n (1.14.8) sha256=285778639134865c5e0f6269e0b818256017e8cde89993fdfcbfb64d088824a5
   image_processing (1.14.0) sha256=754cc169c9c262980889bec6bfd325ed1dafad34f85242b5a07b60af004742fb
   importmap-rails (2.2.3) sha256=7101be2a4dc97cf1558fb8f573a718404c5f6bcfe94f304bf1f39e444feeb16a
@@ -627,7 +626,7 @@ CHECKSUMS
   irb (1.17.0) sha256=168c4ddb93d8a361a045c41d92b2952c7a118fa73f23fe14e55609eb7a863aae
   jbuilder (2.14.1) sha256=4eb26376ff60ef100cb4fd6fd7533cd271f9998327e86adf20fd8c0e69fabb42
   jquery-rails (4.6.1) sha256=619f3496cdcdeaae1fd6dafa52dbac3fc45b745d4e09712da4184a16b3a8d9c0
-  jquery-ui-rails (6.0.1) sha256=22a01737808f65a621229a7e58785ebcb88a95ad2a08560f3503ddcfd7e27cd5
+  jquery-ui-rails (7.0.0) sha256=e2b41a6fd987e6391a668d89bb34e09d5d292bf5651056d94911f5a915610478
   jsbundling-rails (1.3.1) sha256=0fa03f6d051c694cbf55a022d8be53399879f2c4cf38b2968f86379c62b1c2ca
   jsonapi-serializer (2.2.0) sha256=f8141ac6f0c1e17e8513df68f8341afe2d7bffc285841d7090bc07f07efb0029
   kaminari (1.2.2) sha256=c4076ff9adccc6109408333f87b5c4abbda5e39dc464bd4c66d06d9f73442a3e
@@ -687,6 +686,7 @@ CHECKSUMS
   rdoc (7.2.0) sha256=8650f76cd4009c3b54955eb5d7e3a075c60a57276766ebf36f9085e8c9f23192
   reline (0.6.3) sha256=1198b04973565b36ec0f11542ab3f5cfeeec34823f4e54cebde90968092b1835
   request_store (1.7.0) sha256=e1b75d5346a315f452242a68c937ef8e48b215b9453a77a6c0acdca2934c88cb
+  requestjs-rails (0.0.14) sha256=bb494198993b9bf136adeeffa3594c0143c7d16c7de4485c5e20d9c126e69a2d
   responders (3.2.0) sha256=89c2d6ac0ae16f6458a11524cae4a8efdceba1a3baea164d28ee9046bd3df55a
   rexml (3.4.4) sha256=19e0a2c3425dfbf2d4fc1189747bdb2f849b6c5e74180401b15734bc97b5d142
   ruby-vips (2.3.0) sha256=e685ec02c13969912debbd98019e50492e12989282da5f37d05f5471442f5374
@@ -697,7 +697,7 @@ CHECKSUMS
   spree (4.7.3) sha256=b48b23892c1bb9539f565e18f44eecf81b70f657774f42202e4b5dbddb58ccbe
   spree_api (4.7.3) sha256=eb95ee4bfda5460107a7ed64051b0106abdce6f80c3ccb7b81a3d00641a26816
   spree_auth_devise (4.6.3) sha256=5eeada77570f5ab335a9c6c150d7cdaee39203ce43b70ac24d2ffb195952ed6e
-  spree_backend (4.7.2) sha256=166440c934f6a00aab610cd28a22422bbf220597269eed291d5f208eb390724c
+  spree_backend (4.8.4) sha256=aabca135fdb53e84fc84878697cf5610d873ab739d531087902352c783c292ec
   spree_cli (4.7.3) sha256=8b5637ae83940ce80b6e2916bd13d1ed957f722dbe246372f5d99d81db4f461f
   spree_core (4.7.3) sha256=03bd357a8b390e8ca46634b25975ceb1c2a3bf75157365dc9c454e61775c6f7f
   spree_emails (4.7.3) sha256=2a0e6425dbdf80f42c748f33202f50d498cafe619a246126e40d0dbec4e836ab
