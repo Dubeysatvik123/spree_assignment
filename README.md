@@ -1,24 +1,45 @@
-# README
+# Spree Commerce Deployment
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Live URL
+http://18.233.151.45
 
-Things you may want to cover:
+## Deployment Steps
 
-* Ruby version
+1. Clone the repo and install dependencies:
+   ```bash
+   git clone https://github.com/Dubeysatvik123/spree_assignment.git
+   cd spree_assignment
+   bundle install
+   ```
 
-* System dependencies
+2. Add shared config files on the server (not committed — secrets):
+   ```
+   /var/www/spree/shared/config/database.yml
+   /var/www/spree/shared/config/master.key
+   ```
 
-* Configuration
+3. Deploy using Capistrano:
+   ```bash
+   bundle exec cap production deploy
+   ```
 
-* Database creation
+## CI/CD Overview
 
-* Database initialization
+On every push to `master`, GitHub Actions automatically:
+- Sets up Ruby and installs gems
+- SSHs into the EC2 server using a stored deploy key
+- Runs `cap production deploy` — pulls latest code, runs migrations, precompiles assets, and restarts Puma
 
-* How to run the test suite
+**Required GitHub Secrets:**
+| Secret | Description |
+|--------|-------------|
+| `EC2_HOST` | Server IP address |
+| `EC2_SSH_KEY` | Private SSH key for the deploy user |
 
-* Services (job queues, cache servers, search engines, etc.)
+## Screenshots
 
-* Deployment instructions
+### Running Application
+![Spree Storefront](screenshots/storefront.png)
 
-* ...
+### GitHub Actions – Successful Deploy
+![CI/CD](screenshots/github_actions.png)
