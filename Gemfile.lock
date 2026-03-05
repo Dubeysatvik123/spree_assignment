@@ -50,6 +50,9 @@ GEM
       erubi (~> 1.11)
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
+    active_link_to (1.0.5)
+      actionpack
+      addressable
     active_storage_validations (0.9.5)
       rails (>= 5.2.0)
     activejob (7.1.3)
@@ -88,6 +91,8 @@ GEM
     acts_as_list (1.2.6)
       activerecord (>= 6.1)
       activesupport (>= 6.1)
+    addressable (2.8.9)
+      public_suffix (>= 2.0.2, < 8.0)
     airbrussh (1.6.0)
       sshkit (>= 1.6.1, != 1.7.0)
     auto_strip_attributes (2.6.0)
@@ -147,7 +152,7 @@ GEM
       warden (~> 1.2.3)
     devise-encryptable (0.2.0)
       devise (>= 2.1.0)
-    doorkeeper (5.8.2)
+    doorkeeper (5.9.0)
       railties (>= 5)
     drb (2.2.3)
     erb (6.0.2)
@@ -295,6 +300,7 @@ GEM
     psych (5.3.1)
       date
       stringio
+    public_suffix (7.0.5)
     puma (6.6.1)
       nio4r (~> 2.0)
     racc (1.8.1)
@@ -439,20 +445,22 @@ GEM
     spree_extension (0.1.0)
       activerecord (>= 4.2)
       spree_core
-    spree_frontend (4.7.0)
+    spree_frontend (4.8.1)
+      active_link_to
       babel-transpiler (~> 0.7)
       bootstrap (~> 4.0)
       canonical-rails (~> 0.2, >= 0.2.10)
       flag-icons-rails (~> 3.4)
       glyphicons (~> 1.0)
+      importmap-rails
       inline_svg (~> 1.5)
       jquery-rails (~> 4.3)
-      jsbundling-rails
       responders
       sass-rails (>= 5)
-      spree_api (>= 4.7.0)
-      spree_core (>= 4.7.0)
+      spree_api (~> 4.7)
+      spree_core (~> 4.7)
       sprockets (~> 4.0)
+      stimulus-rails
       turbo-rails
     spree_sample (4.7.3)
       ffaker (~> 2.9)
@@ -545,7 +553,7 @@ DEPENDENCIES
   spree_auth_devise (~> 4.6)
   spree_backend (~> 4.7.0)
   spree_emails (~> 4.7.0)
-  spree_frontend (~> 4.7.0)
+  spree_frontend (~> 4.8.1)
   spree_sample (~> 4.7.0)
   sqlite3 (~> 1.4)
   stimulus-rails
@@ -560,6 +568,7 @@ CHECKSUMS
   actionpack (7.1.3) sha256=e3e9d13ba1f4d37f64a6fac186f2c3c8c0af5883ec44fbe234796af5a8710ebd
   actiontext (7.1.3) sha256=bfeb73715785a900e383699b7312371975e3a66a1a0e2d3c4cf06f87a5713ad1
   actionview (7.1.3) sha256=5b6b37261da58b10a53a68a547412525460ca68d8336ce1320107cda26a7b0d1
+  active_link_to (1.0.5) sha256=4830847b3d14589df1e9fc62038ceec015257fce975ec1c2a77836c461b139ba
   active_storage_validations (0.9.5) sha256=3d848cb94920a7840a27f69f233a7fc6d3a505688414a565031ccd7d743c8a4d
   activejob (7.1.3) sha256=017adc92725f4e5003082ba84cdb5eb55235571775e6e41da6354060517a562e
   activemerchant (1.137.0) sha256=fdf5e33f5c94d1981bd632d72e282c0a5afaf06bac6df3f933c08a95e98bd5ce
@@ -569,6 +578,7 @@ CHECKSUMS
   activestorage (7.1.3) sha256=1db37dd877d038173f1eea5e01697bab42cb08adbe0574239641172f7ce949d9
   activesupport (7.1.3) sha256=fbfc137f1ab0e3909bd3de3e2a965245abf0381a2a7e283fa766cee6f5e0f927
   acts_as_list (1.2.6) sha256=8345380900b7bee620c07ad00991ccee59af3d8c9e8574f426e321da2865fdc8
+  addressable (2.8.9) sha256=cc154fcbe689711808a43601dee7b980238ce54368d23e127421753e46895485
   airbrussh (1.6.0) sha256=7e2cf581f2319d2c2b2b672c9fc486efb4dfcfed4bd2dadbef5f10b8b2a000d0
   auto_strip_attributes (2.6.0) sha256=a7e2e0cf744de2bcd947fd68014220702bcc88c81274c1cd9ce6f7316aae39b0
   autoprefixer-rails (10.4.21.0) sha256=71b48caf850fc25275abd96f0b1fdd51c82e1c9b99cd30085cacb05da9c70235
@@ -597,7 +607,7 @@ CHECKSUMS
   debug (1.11.1) sha256=2e0b0ac6119f2207a6f8ac7d4a73ca8eb4e440f64da0a3136c30343146e952b6
   devise (4.9.4) sha256=920042fe5e704c548aa4eb65ebdd65980b83ffae67feb32c697206bfd975a7f8
   devise-encryptable (0.2.0) sha256=9860caed9484030c438cfaf05831355c16c6a9612dcd1e12e84805850f7d09b6
-  doorkeeper (5.8.2) sha256=a73d07aeaf590b1e7e2a35390446f23131c9f37bc0561653e514d3973f4d50d3
+  doorkeeper (5.9.0) sha256=edad053b3dcb6bf51e3181fc423333e7fba28863beb2122379643ce6463b6336
   drb (2.2.3) sha256=0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373
   erb (6.0.2) sha256=9fe6264d44f79422c87490a1558479bd0e7dad4dd0e317656e67ea3077b5242b
   erubi (1.13.1) sha256=a082103b0885dbc5ecf1172fede897f9ebdb745a4b97a5e8dc63953db1ee4ad9
@@ -672,6 +682,7 @@ CHECKSUMS
   prettyprint (0.2.0) sha256=2bc9e15581a94742064a3cc8b0fb9d45aae3d03a1baa6ef80922627a0766f193
   prism (1.9.0) sha256=7b530c6a9f92c24300014919c9dcbc055bf4cdf51ec30aed099b06cd6674ef85
   psych (5.3.1) sha256=eb7a57cef10c9d70173ff74e739d843ac3b2c019a003de48447b2963d81b1974
+  public_suffix (7.0.5) sha256=1a8bb08f1bbea19228d3bed6e5ed908d1cb4f7c2726d18bd9cadf60bc676f623
   puma (6.6.1) sha256=b9b56e4a4ea75d1bfa6d9e1972ee2c9f43d0883f011826d914e8e37b3694ea1e
   racc (1.8.1) sha256=4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f
   rack (3.2.5) sha256=4cbd0974c0b79f7a139b4812004a62e4c60b145cba76422e288ee670601ed6d3
@@ -702,7 +713,7 @@ CHECKSUMS
   spree_core (4.7.3) sha256=03bd357a8b390e8ca46634b25975ceb1c2a3bf75157365dc9c454e61775c6f7f
   spree_emails (4.7.3) sha256=2a0e6425dbdf80f42c748f33202f50d498cafe619a246126e40d0dbec4e836ab
   spree_extension (0.1.0) sha256=b648327f4787295e051be4ea0c0a47baec47c2e245bca9c93ecf73605fc3a051
-  spree_frontend (4.7.0) sha256=9821679a02a9db17f2b590da3750dd8e06b4d775a8bd84abd3a0f9a3e8cf5676
+  spree_frontend (4.8.1) sha256=ef66ec2895e90f71f43f341172855f880af5a8d637516d2d412f2cefe75e7d41
   spree_sample (4.7.3) sha256=899e16c3e6202f186ccc1f58f777332ddacdb40deaf3df3eb1cad83e34cf8e7b
   sprockets (4.2.2) sha256=761e5a49f1c288704763f73139763564c845a8f856d52fba013458f8af1b59b1
   sprockets-rails (3.5.2) sha256=a9e88e6ce9f8c912d349aa5401509165ec42326baf9e942a85de4b76dbc4119e
