@@ -50,8 +50,12 @@ GEM
       erubi (~> 1.11)
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
-    active_storage_validations (0.9.5)
-      rails (>= 5.2.0)
+    active_storage_validations (1.4.0)
+      activejob (>= 6.1.4)
+      activemodel (>= 6.1.4)
+      activestorage (>= 6.1.4)
+      activesupport (>= 6.1.4)
+      marcel (>= 1.0.3)
     activejob (7.1.3)
       activesupport (= 7.1.3)
       globalid (>= 0.3.6)
@@ -173,7 +177,8 @@ GEM
     globalid (1.3.0)
       activesupport (>= 6.1)
     glyphicons (1.0.2)
-    highline (2.1.0)
+    highline (3.1.2)
+      reline
     hotwire-rails (0.1.3)
       rails (>= 6.0.0)
       stimulus-rails
@@ -207,6 +212,7 @@ GEM
       railties (>= 3.2.16)
     jsbundling-rails (1.3.1)
       railties (>= 6.0.0)
+    json (2.18.1)
     jsonapi-serializer (2.2.0)
       activesupport (>= 4.2)
     kaminari (1.2.2)
@@ -238,7 +244,7 @@ GEM
     minitest (6.0.2)
       drb (~> 2.0)
       prism (~> 1.5)
-    mobility (1.2.9)
+    mobility (1.3.2)
       i18n (>= 0.6.10, < 2)
       request_store (~> 1.0)
     mobility-ransack (1.2.2)
@@ -285,8 +291,8 @@ GEM
       racc (~> 1.4)
     orm_adapter (0.5.0)
     ostruct (0.6.3)
-    paranoia (2.6.4)
-      activerecord (>= 5.1, < 7.2)
+    paranoia (3.1.0)
+      activerecord (>= 7, < 8.2)
     popper_js (1.16.1)
     pp (0.6.3)
       prettyprint
@@ -366,15 +372,15 @@ GEM
       sprockets-rails
       tilt
     select2-rails (4.0.13)
-    spree (4.7.3)
-      spree_api (= 4.7.3)
-      spree_cli (= 4.7.3)
-      spree_core (= 4.7.3)
-    spree_api (4.7.3)
+    spree (4.10.3)
+      spree_api (= 4.10.3)
+      spree_cli (= 4.10.3)
+      spree_core (= 4.10.3)
+    spree_api (4.10.3)
       bcrypt (~> 3.1)
       doorkeeper (~> 5.3)
       jsonapi-serializer (~> 2.1)
-      spree_core (= 4.7.3)
+      spree_core (= 4.10.3)
     spree_auth_devise (4.6.3)
       devise (~> 4.7)
       devise-encryptable (= 0.2.0)
@@ -397,40 +403,42 @@ GEM
       spree (>= 4.7.0)
       sprockets (~> 4.0)
       tinymce-rails (~> 5.0)
-    spree_cli (4.7.3)
+    spree_cli (4.10.3)
       thor (~> 1.0)
-    spree_core (4.7.3)
-      actionpack (>= 6.1, < 7.2)
-      actionview (>= 6.1, < 7.2)
-      active_storage_validations (~> 0.9, <= 0.9.5)
-      activejob (>= 6.1, < 7.2)
+    spree_core (4.10.3)
+      actionpack (>= 6.1, < 8.0)
+      actionview (>= 6.1, < 8.0)
+      active_storage_validations (~> 1.1)
+      activejob (>= 6.1, < 8.0)
       activemerchant (~> 1.67)
-      activemodel (>= 6.1, < 7.2)
-      activerecord (>= 6.1, < 7.2)
+      activemodel (>= 6.1, < 8.0)
+      activerecord (>= 6.1, < 8.0)
       activerecord-typedstore
-      activestorage (>= 6.1, < 7.2)
-      activesupport (>= 6.1, < 7.2)
+      activestorage (>= 6.1, < 8.0)
+      activesupport (>= 6.1, < 8.0)
       acts_as_list (>= 0.8)
       auto_strip_attributes (~> 2.6)
       awesome_nested_set (~> 3.3, >= 3.3.1)
       cancancan (~> 3.2)
       carmen (>= 1.0)
       friendly_id (~> 5.2, >= 5.2.1)
-      friendly_id-mobility (~> 1.0.4)
-      highline (~> 2.0)
+      friendly_id-mobility (~> 1.0)
+      highline (>= 2, < 4)
       image_processing (~> 1.2)
       kaminari (~> 1.2)
-      mobility (~> 1.2.9)
-      mobility-ransack (~> 1.2.1)
+      mobility (~> 1.2)
+      mobility-ransack (~> 1.2)
       monetize (~> 1.9)
       money (~> 6.13)
-      paranoia (~> 2.4)
-      railties (>= 6.1, < 7.2)
+      paranoia (>= 2.4)
+      railties (>= 6.1, < 8.0)
       ransack (>= 4.1)
+      request_store (~> 1.7)
       rexml
       state_machines-activemodel (~> 0.7)
       state_machines-activerecord (~> 0.6)
       stringex
+      tracking_number
       validates_zipcode
     spree_emails (4.7.3)
       actionmailer
@@ -493,6 +501,9 @@ GEM
     timeout (0.6.0)
     tinymce-rails (5.10.9)
       railties (>= 3.1.1)
+    tracking_number (2.4.0)
+      activesupport (>= 4.2.5)
+      json (>= 1.8.3)
     tsort (0.2.0)
     turbo-rails (2.0.23)
       actionpack (>= 7.1.0)
@@ -541,7 +552,7 @@ DEPENDENCIES
   mysql2 (~> 0.5)
   puma (~> 6.0)
   rails (= 7.1.3)
-  spree (~> 4.7.0)
+  spree (~> 4.10.3)
   spree_auth_devise (~> 4.6)
   spree_backend (~> 4.7.0)
   spree_emails (~> 4.7.0)
@@ -560,7 +571,7 @@ CHECKSUMS
   actionpack (7.1.3) sha256=e3e9d13ba1f4d37f64a6fac186f2c3c8c0af5883ec44fbe234796af5a8710ebd
   actiontext (7.1.3) sha256=bfeb73715785a900e383699b7312371975e3a66a1a0e2d3c4cf06f87a5713ad1
   actionview (7.1.3) sha256=5b6b37261da58b10a53a68a547412525460ca68d8336ce1320107cda26a7b0d1
-  active_storage_validations (0.9.5) sha256=3d848cb94920a7840a27f69f233a7fc6d3a505688414a565031ccd7d743c8a4d
+  active_storage_validations (1.4.0) sha256=0ecd80d46c9d7a657020dfeb335041cb12e779e11ccd9ddc3946e77679537b00
   activejob (7.1.3) sha256=017adc92725f4e5003082ba84cdb5eb55235571775e6e41da6354060517a562e
   activemerchant (1.137.0) sha256=fdf5e33f5c94d1981bd632d72e282c0a5afaf06bac6df3f933c08a95e98bd5ce
   activemodel (7.1.3) sha256=edd9da96450783a100dfa8ce7ed3baa21c8d58197359216cb1843d8e9e90fc24
@@ -617,7 +628,7 @@ CHECKSUMS
   friendly_id-mobility (1.0.5) sha256=8c0cf4d0a1358311db1b2dcc0e4c33077ae929c7e34749485268d066adbaf2e4
   globalid (1.3.0) sha256=05c639ad6eb4594522a0b07983022f04aa7254626ab69445a0e493aa3786ff11
   glyphicons (1.0.2) sha256=037fb1223c31c0856a5e709b64024c6eed84fa8632c0cab8ac4f7b584ea24a5f
-  highline (2.1.0) sha256=d63d7f472f8ffaa143725161ae6fb06895b5cb7527e0b4dac5ad1e4902c80cb9
+  highline (3.1.2) sha256=67cbd34d19f6ef11a7ee1d82ffab5d36dfd5b3be861f450fc1716c7125f4bb4a
   hotwire-rails (0.1.3) sha256=a4ed7b6bab50f91ce5a3bfaf1c721e6cef8a9ec8f6974c290e2862a280d08d8d
   i18n (1.14.8) sha256=285778639134865c5e0f6269e0b818256017e8cde89993fdfcbfb64d088824a5
   image_processing (1.14.0) sha256=754cc169c9c262980889bec6bfd325ed1dafad34f85242b5a07b60af004742fb
@@ -629,6 +640,7 @@ CHECKSUMS
   jquery-rails (4.6.1) sha256=619f3496cdcdeaae1fd6dafa52dbac3fc45b745d4e09712da4184a16b3a8d9c0
   jquery-ui-rails (6.0.1) sha256=22a01737808f65a621229a7e58785ebcb88a95ad2a08560f3503ddcfd7e27cd5
   jsbundling-rails (1.3.1) sha256=0fa03f6d051c694cbf55a022d8be53399879f2c4cf38b2968f86379c62b1c2ca
+  json (2.18.1) sha256=fe112755501b8d0466b5ada6cf50c8c3f41e897fa128ac5d263ec09eedc9f986
   jsonapi-serializer (2.2.0) sha256=f8141ac6f0c1e17e8513df68f8341afe2d7bffc285841d7090bc07f07efb0029
   kaminari (1.2.2) sha256=c4076ff9adccc6109408333f87b5c4abbda5e39dc464bd4c66d06d9f73442a3e
   kaminari-actionview (1.2.2) sha256=1330f6fc8b59a4a4ef6a549ff8a224797289ebf7a3a503e8c1652535287cc909
@@ -641,7 +653,7 @@ CHECKSUMS
   mini_magick (5.3.1) sha256=29395dfd76badcabb6403ee5aff6f681e867074f8f28ce08d78661e9e4a351c4
   mini_mime (1.1.5) sha256=8681b7e2e4215f2a159f9400b5816d85e9d8c6c6b491e96a12797e798f8bccef
   minitest (6.0.2) sha256=db6e57956f6ecc6134683b4c87467d6dd792323c7f0eea7b93f66bd284adbc3d
-  mobility (1.2.9) sha256=e0b88f1e0654e2d02e82d89140ed9d1882f3346bdf2ec1ddd707aef8a442bf4c
+  mobility (1.3.2) sha256=32fbbb0e53118ef42de20daa6ac94dbb758c628874092eba311b968a1e1d757b
   mobility-ransack (1.2.2) sha256=8b480ce5bc4937abc37c17b9922d7e41b8a7064a3207b3a64e5aa71e0cb3332b
   monetize (1.13.0) sha256=0c1f8ae28aa21bbf1a6d014138d9bb0a5ce756c1a99b8b7f7d409c258b01d3b3
   money (6.19.0) sha256=ec936fa1e42f2783719241ed9fd52725d0efa628f928feea1eb5c37d5de7daf3
@@ -666,7 +678,7 @@ CHECKSUMS
   nokogiri (1.19.1-x86_64-linux-musl) sha256=4267f38ad4fc7e52a2e7ee28ed494e8f9d8eb4f4b3320901d55981c7b995fc23
   orm_adapter (0.5.0) sha256=aa5d0be5d540cbb46d3a93e88061f4ece6a25f6e97d6a47122beb84fe595e9b9
   ostruct (0.6.3) sha256=95a2ed4a4bd1d190784e666b47b2d3f078e4a9efda2fccf18f84ddc6538ed912
-  paranoia (2.6.4) sha256=9d88a6589b2418eaa136ec491e5995f4f31061d7301acec14f4f0f1827b86250
+  paranoia (3.1.0) sha256=36574a46e8df663d0da7d9008e987b72a6a9eccee13c058b7094acc810e39f52
   popper_js (1.16.1) sha256=6b102fb5ee86c5fa68a0c865547e66d9bf7e80a951053b21c72c3c92a587d692
   pp (0.6.3) sha256=2951d514450b93ccfeb1df7d021cae0da16e0a7f95ee1e2273719669d0ab9df6
   prettyprint (0.2.0) sha256=2bc9e15581a94742064a3cc8b0fb9d45aae3d03a1baa6ef80922627a0766f193
@@ -694,12 +706,12 @@ CHECKSUMS
   sassc (2.4.0) sha256=4c60a2b0a3b36685c83b80d5789401c2f678c1652e3288315a1551d811d9f83e
   sassc-rails (2.1.2) sha256=5f4fdf3881fc9bdc8e856ffbd9850d70a2878866feae8114aa45996179952db5
   select2-rails (4.0.13) sha256=52e39a9bef669f98a9454303ed8ea51f5e31c80a2d39ff1aa1dced36a858e70c
-  spree (4.7.3) sha256=b48b23892c1bb9539f565e18f44eecf81b70f657774f42202e4b5dbddb58ccbe
-  spree_api (4.7.3) sha256=eb95ee4bfda5460107a7ed64051b0106abdce6f80c3ccb7b81a3d00641a26816
+  spree (4.10.3) sha256=db611e9ccf416d2b88b6528e48d71fc2115184459f5c0f276e9dc5e71d30d03b
+  spree_api (4.10.3) sha256=e1d05f38650098fd74fb86ddc8ede3b8b33a009e6b9da24ff11a78b6d91ab4bb
   spree_auth_devise (4.6.3) sha256=5eeada77570f5ab335a9c6c150d7cdaee39203ce43b70ac24d2ffb195952ed6e
   spree_backend (4.7.2) sha256=166440c934f6a00aab610cd28a22422bbf220597269eed291d5f208eb390724c
-  spree_cli (4.7.3) sha256=8b5637ae83940ce80b6e2916bd13d1ed957f722dbe246372f5d99d81db4f461f
-  spree_core (4.7.3) sha256=03bd357a8b390e8ca46634b25975ceb1c2a3bf75157365dc9c454e61775c6f7f
+  spree_cli (4.10.3) sha256=998a687b786838a5fec6c505f8513da82268282fd813914a985f558c2260c50d
+  spree_core (4.10.3) sha256=505683a28bace7acd36b613d673c8be4dea5fda96048b377c988ac70343f461b
   spree_emails (4.7.3) sha256=2a0e6425dbdf80f42c748f33202f50d498cafe619a246126e40d0dbec4e836ab
   spree_extension (0.1.0) sha256=b648327f4787295e051be4ea0c0a47baec47c2e245bca9c93ecf73605fc3a051
   spree_frontend (4.7.0) sha256=9821679a02a9db17f2b590da3750dd8e06b4d775a8bd84abd3a0f9a3e8cf5676
@@ -722,6 +734,7 @@ CHECKSUMS
   tilt (2.7.0) sha256=0d5b9ba69f6a36490c64b0eee9f6e9aad517e20dcc848800a06eb116f08c6ab3
   timeout (0.6.0) sha256=6d722ad619f96ee383a0c557ec6eb8c4ecb08af3af62098a0be5057bf00de1af
   tinymce-rails (5.10.9) sha256=99f60d7c89bc2b4a11063b964a4871698383becac2067bd529aa33347c124402
+  tracking_number (2.4.0) sha256=2a4c6b39cbdfc8326c234626556da1e269c8dfe33478786bea93461331c247ff
   tsort (0.2.0) sha256=9650a793f6859a43b6641671278f79cfead60ac714148aabe4e3f0060480089f
   turbo-rails (2.0.23) sha256=ee0d90733aafff056cf51ff11e803d65e43cae258cc55f6492020ec1f9f9315f
   tzinfo (2.0.6) sha256=8daf828cc77bcf7d63b0e3bdb6caa47e2272dcfaf4fbfe46f8c3a9df087a829b
