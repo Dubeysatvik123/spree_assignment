@@ -88,7 +88,7 @@ GEM
     acts_as_list (1.2.6)
       activerecord (>= 6.1)
       activesupport (>= 6.1)
-    airbrussh (1.6.0)
+    airbrussh (1.6.1)
       sshkit (>= 1.6.1, != 1.7.0)
     auto_strip_attributes (2.6.0)
       activerecord (>= 4.0)
@@ -113,7 +113,7 @@ GEM
     cancancan (3.6.1)
     canonical-rails (0.2.17)
       actionview (>= 4.1, < 8.1)
-    capistrano (3.20.0)
+    capistrano (3.20.1)
       airbrussh (>= 1.0.0)
       i18n
       rake (>= 10.0.0)
@@ -265,7 +265,7 @@ GEM
       net-ssh (>= 5.0.0, < 8.0.0)
     net-smtp (0.5.1)
       net-protocol
-    net-ssh (7.3.0)
+    net-ssh (7.3.2)
     nio4r (2.7.5)
     nokogiri (1.19.1-aarch64-linux-gnu)
       racc (~> 1.4)
@@ -335,7 +335,7 @@ GEM
       rake (>= 12.2)
       thor (~> 1.0, >= 1.2.2)
       zeitwerk (~> 2.6)
-    rake (13.3.1)
+    rake (13.4.2)
     ransack (4.4.0)
       activerecord (>= 7.1)
       activesupport (>= 7.1)
@@ -528,7 +528,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  capistrano (~> 3.18)
+  capistrano (~> 3.20)
   capistrano-bundler (~> 2.1)
   capistrano-rails (~> 1.6)
   capistrano-rbenv (~> 2.2)
@@ -569,7 +569,7 @@ CHECKSUMS
   activestorage (7.1.3) sha256=1db37dd877d038173f1eea5e01697bab42cb08adbe0574239641172f7ce949d9
   activesupport (7.1.3) sha256=fbfc137f1ab0e3909bd3de3e2a965245abf0381a2a7e283fa766cee6f5e0f927
   acts_as_list (1.2.6) sha256=8345380900b7bee620c07ad00991ccee59af3d8c9e8574f426e321da2865fdc8
-  airbrussh (1.6.0) sha256=7e2cf581f2319d2c2b2b672c9fc486efb4dfcfed4bd2dadbef5f10b8b2a000d0
+  airbrussh (1.6.1) sha256=9a5fc95583cefe722054a016d26ff0338cf00072b031b829086dde2039d5836a
   auto_strip_attributes (2.6.0) sha256=a7e2e0cf744de2bcd947fd68014220702bcc88c81274c1cd9ce6f7316aae39b0
   autoprefixer-rails (10.4.21.0) sha256=71b48caf850fc25275abd96f0b1fdd51c82e1c9b99cd30085cacb05da9c70235
   awesome_nested_set (3.9.0) sha256=3ce99e816550f97f4de118e621630070aacf24928b920fe4a68846578a8daaed
@@ -582,9 +582,10 @@ CHECKSUMS
   bootsnap (1.23.0) sha256=c1254f458d58558b58be0f8eb8f6eec2821456785b7cdd1e16248e2020d3f214
   bootstrap (4.6.2.1) sha256=b7169e8ca5880a7251442aea2fd59b433fb28370449db02f8fd9cd10e39ceee0
   builder (3.3.0) sha256=497918d2f9dca528fdca4b88d84e4ef4387256d984b8154e9d5d3fe5a9c8835f
+  bundler (4.0.12) sha256=7f8b757d28dfb636e7b24fba2344ac6dd13b5b24f4b46d62573d483f211825ac
   cancancan (3.6.1) sha256=975c1d5cbf58d5df48a9452a7f61ae3d254608cd87570402f5925a8864c56b62
   canonical-rails (0.2.17) sha256=771a2bc71bb4742fe175a639b545ec597d166f46a498611387ab7d81eae43ceb
-  capistrano (3.20.0) sha256=0113e58dda99add0342e56a244f664734c59f442c5ed734f5303b0b559b479c9
+  capistrano (3.20.1) sha256=b0d54ba5cf49bb194998bf6b427e889aa36ed05f545ecf7cc37acb9d529e9ae9
   capistrano-bundler (2.2.0) sha256=47b4cf2ea17ea132bb0a5cabc5663443f5190a54f4da5b322d04e1558ff1468c
   capistrano-rails (1.7.0) sha256=aca57455e8c5435785e0f938e16aa5b79c263694a755e1dca1c5d1743b40aae7
   capistrano-rbenv (2.2.0) sha256=3c8f39b7c624f3806630dcb475484bb3579aef07a40efe85089d83f64b0c35f5
@@ -654,7 +655,7 @@ CHECKSUMS
   net-scp (4.1.0) sha256=a99b0b92a1e5d360b0de4ffbf2dc0c91531502d3d4f56c28b0139a7c093d1a5d
   net-sftp (4.0.0) sha256=65bb91c859c2f93b09826757af11b69af931a3a9155050f50d1b06d384526364
   net-smtp (0.5.1) sha256=ed96a0af63c524fceb4b29b0d352195c30d82dd916a42f03c62a3a70e5b70736
-  net-ssh (7.3.0) sha256=172076c4b30ce56fb25a03961b0c4da14e1246426401b0f89cba1a3b54bf3ef0
+  net-ssh (7.3.2) sha256=65029e213c380e20e5fd92ece663934ab0a0fe888e0cd7cc6a5b664074362dd4
   nio4r (2.7.5) sha256=6c90168e48fb5f8e768419c93abb94ba2b892a1d0602cb06eef16d8b7df1dca1
   nokogiri (1.19.1-aarch64-linux-gnu) sha256=cfdb0eafd9a554a88f12ebcc688d2b9005f9fce42b00b970e3dc199587b27f32
   nokogiri (1.19.1-aarch64-linux-musl) sha256=1e2150ab43c3b373aba76cd1190af7b9e92103564063e48c474f7600923620b5
@@ -682,7 +683,7 @@ CHECKSUMS
   rails-dom-testing (2.3.0) sha256=8acc7953a7b911ca44588bf08737bc16719f431a1cc3091a292bca7317925c1d
   rails-html-sanitizer (1.7.0) sha256=28b145cceaf9cc214a9874feaa183c3acba036c9592b19886e0e45efc62b1e89
   railties (7.1.3) sha256=7a1dc59c93296f239a9d97b5a9c52c49fd8f7dcdac33ebe4cf39842ff92b50a6
-  rake (13.3.1) sha256=8c9e89d09f66a26a01264e7e3480ec0607f0c497a861ef16063604b1b08eb19c
+  rake (13.4.2) sha256=cb825b2bd5f1f8e91ca37bddb4b9aaf345551b4731da62949be002fa89283701
   ransack (4.4.0) sha256=35aa797d5dd146cea55300d397966bd79fe2b1b0d1cbc25c97f88fdbe3ad0fe1
   rdoc (7.2.0) sha256=8650f76cd4009c3b54955eb5d7e3a075c60a57276766ebf36f9085e8c9f23192
   reline (0.6.3) sha256=1198b04973565b36ec0f11542ab3f5cfeeec34823f4e54cebde90968092b1835
